@@ -33,8 +33,10 @@ return {
 		dependencies = { "williamboman/mason.nvim" },
 		opts = {
 			ensure_installed = {
+				"lua_ls",
 				"html",
 				"cssls",
+				"ts_ls",
 				"pyright",
 				"clangd",
 				"rust_analyzer",
@@ -46,6 +48,21 @@ return {
 				"tinymist",
 			},
 			automatic_installation = true,
+		},
+	},
+
+	-- Mason tool installer for formatters/linters
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		dependencies = { "williamboman/mason.nvim" },
+		opts = {
+			ensure_installed = {
+				"prettier",
+				"stylua",
+				"black",
+				"isort",
+				"clang-format",
+			},
 		},
 	},
 
@@ -97,6 +114,24 @@ return {
 
 			-- Server configurations
 			local servers = {
+				lua_ls = {
+					settings = {
+						Lua = {
+							runtime = { version = "LuaJIT" },
+							workspace = {
+								checkThirdParty = false,
+								library = vim.api.nvim_get_runtime_file("", true),
+							},
+							diagnostics = {
+								globals = { "vim" },
+							},
+							completion = {
+								callSnippet = "Replace",
+							},
+						},
+					},
+				},
+				ts_ls = {},
 				html = {},
 				cssls = {},
 				pyright = {},
@@ -105,7 +140,6 @@ return {
 				marksman = {},
 				zls = {},
 				astro = {},
-                prettier = {},
 				texlab = {
 					settings = {
 						texlab = {
