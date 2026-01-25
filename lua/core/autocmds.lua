@@ -31,6 +31,15 @@ autocmd({ "FileType" }, {
 	end,
 })
 
+-- Set conceallevel for markdown
+autocmd({ "FileType" }, {
+	group = augroup("MarkdownConceal", { clear = true }),
+	pattern = { "markdown" },
+	callback = function()
+		vim.opt_local.conceallevel = 2
+	end,
+})
+
 -- Highlight on yank
 autocmd({ "TextYankPost" }, {
 	group = augroup("YankHighlight", { clear = true }),

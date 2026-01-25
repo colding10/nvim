@@ -105,6 +105,7 @@ return {
 				marksman = {},
 				zls = {},
 				astro = {},
+                prettier = {},
 				texlab = {
 					settings = {
 						texlab = {
