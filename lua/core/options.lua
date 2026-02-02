@@ -24,7 +24,7 @@ o.sidescrolloff = 8
 -- Behavior
 o.swapfile = false
 o.writebackup = false
-o.updatetime = 30
+o.updatetime = 250
 o.jumpoptions = "view"
 o.splitright = true
 o.splitbelow = true

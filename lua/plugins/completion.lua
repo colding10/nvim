@@ -13,7 +13,7 @@ return {
 
 			ls.setup({
 				history = true,
-				updateevents = "TextChanged,TextChangedI",
+				updateevents = "TextChangedI",
 				enable_autosnippets = true,
 			})
 		end,
@@ -32,8 +32,7 @@ return {
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-nvim-lua",
-			"FelipeLema/cmp-async-path",
+"FelipeLema/cmp-async-path",
 			"saadparwaiz1/cmp_luasnip",
 			"L3MON4D3/LuaSnip",
 			"onsails/lspkind.nvim",
@@ -106,8 +105,7 @@ return {
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
-					{ name = "nvim_lua" },
-					{ name = "async_path" },
+		{ name = "async_path" },
 				}, {
 					{ name = "buffer" },
 				}),

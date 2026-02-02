@@ -54,6 +54,7 @@ return {
 	-- Mason tool installer for formatters/linters
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		event = "VeryLazy",
 		dependencies = { "williamboman/mason.nvim" },
 		opts = {
 			ensure_installed = {
@@ -118,10 +119,7 @@ return {
 					settings = {
 						Lua = {
 							runtime = { version = "LuaJIT" },
-							workspace = {
-								checkThirdParty = false,
-								library = vim.api.nvim_get_runtime_file("", true),
-							},
+							workspace = { checkThirdParty = false },
 							diagnostics = {
 								globals = { "vim" },
 							},

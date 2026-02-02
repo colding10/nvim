@@ -7,7 +7,7 @@ map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear highlights" })
 
 -- Save & Quit
 map("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" })
-map("n", "<leader>q", "<cmd>wqa!<CR>", { desc = "Save and quit all" })
+map("n", "<leader>q", "<cmd>wqa<CR>", { desc = "Save and quit all" })
 
 -- System clipboard
 map({ "n", "v" }, "d", '"+d', { silent = true })
@@ -60,8 +60,8 @@ map("n", "<leader>/", "gcc", { desc = "Toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "Toggle comment", remap = true })
 
 -- Diagnostics
-map("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
-map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+map("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end, { desc = "Prev diagnostic" })
+map("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end, { desc = "Next diagnostic" })
 
 -- ADS (competitive programming)
 map("n", "<leader>ads", "<cmd>ADS<CR>")
